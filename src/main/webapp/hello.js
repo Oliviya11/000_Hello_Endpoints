@@ -59,6 +59,15 @@ function enableButtons () {
 	
 	// Update the button label now that the button is active
 	btn.value="Click me for a personal greeting and with period";
+	
+	
+	//function from lection
+	btn = document.getElementById("input_greet_n_times");
+	btn.onclick=function(){sayNTimesHello();};
+	
+	// Update the button label now that the button is active
+	btn.value="Click me for a personal reverse greeting N times";
+	
 }
 
 /*
@@ -98,12 +107,24 @@ function greetByPeriod() {
 	request.execute(sayHelloCallback);
 }
 
+
+//my new function
+function sayNTimesHello() {
+	var name = document.getElementById("name_field").value;
+	var period = document.getElementById("period_field").value;
+	var times = document.getElementById("times_field").value;
+	var request = gapi.client.helloworldendpoints.sayNTimesHello({'name':
+		name, 'period':period, 'times':times});
+	request.execute(sayHelloCallback);
+}
+
 // Process the JSON response
 // In this case, just show an alert dialog box
 // displaying the value of the message field in the response
 function sayHelloCallback (response) {
 	alert(response.message);	
 }
+
 
 
 

@@ -18,4 +18,14 @@ public class HelloClass {
     public String getMessage() {
         return message;
     }
+    
+    public HelloClass (String name, String period, String times) {
+    	int t = Integer.parseInt(times);
+    	this.message = "";
+    	for (int i=0; i<t; ++i){
+    		this.message+="Good " + period + ", " + name + "!"+" ";
+    	}
+    }
+    
+   
 }

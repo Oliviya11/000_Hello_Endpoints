@@ -37,5 +37,12 @@ public class HelloWorldEndpoints {
     public HelloClass greetByPeriod(@Named("name") String name, @Named("period") String period){
     	return new HelloClass(name,period);
     }
-
+    
+    //my new function
+    @ApiMethod(name = "sayNTimesHello", path = "sayNTimesHello",
+            httpMethod = HttpMethod.GET)
+    public HelloClass sayNTimesHello(@Named("name") String name, @Named("period") String period, @Named("times") String times){
+    	return new HelloClass(name,period,times);
+    }
+   
 }
